@@ -1,0 +1,23 @@
+{
+    "KPackageStructure": "Plasma/Applet",
+    "KPlugin": {
+        "Authors": [
+            {
+                "Email": "dramascus@gmail.com",
+                "Name": "Brock & OC"
+            }
+        ],
+        "Category": "Application Launchers",
+        "Description": "Phone-style app launcher with ribbon navigation, favourites carousel, and KRunner search",
+        "Icon": "start-here-kde-symbolic",
+        "Id": "io.github.wasib2005.uselesslauncher",
+        "License": "GPL-2.0-or-later",
+        "Name": "Useless Launcher",
+        "Version": "0.9.2",
+        "Website": "https://github.com/Wasib-2005/Useless-Launcher"
+    },
+    "X-Plasma-API-Minimum-Version": "6.0",
+    "X-Plasma-Provides": [
+        "org.kde.plasma.launchermenu"
+    ]
+}

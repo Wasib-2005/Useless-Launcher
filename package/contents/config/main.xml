@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kcfg xmlns="http://www.kde.org/standards/kcfg/1.0"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.kde.org/standards/kcfg/1.0
+      http://www.kde.org/standards/kcfg/1.0/kcfg.xsd">
+    <kcfgfile name=""/>
+    <group name="General">
+        <entry name="icon" type="String">
+            <default>start-here-kde-symbolic</default>
+        </entry>
+        <entry name="iconMode" type="Int">
+            <default>3</default>
+        </entry>
+        <entry name="iconColorSource" type="Int">
+            <default>0</default>
+        </entry>
+        <entry name="iconSaturation" type="Double">
+            <default>1.0</default>
+        </entry>
+        <entry name="rippleContrastS" type="Bool">
+            <default>false</default>
+        </entry>
+        <entry name="rippleGlow" type="Bool">
+            <default>true</default>
+        </entry>
+        <entry name="hiddenApplications" type="StringList">
+            <default></default>
+        </entry>
+        <entry name="favoritesPortedToKAstats" type="Bool">
+            <default>false</default>
+        </entry>
+        <entry name="favorites" type="StringList">
+            <default>preferred://browser,org.kde.dolphin.desktop,org.kde.konsole.desktop,systemsettings.desktop</default>
+        </entry>
+        <entry name="backgroundOpacity" type="Int">
+            <default>85</default>
+        </entry>
+        <entry name="iconSize" type="Int">
+            <default>48</default>
+        </entry>
+        <entry name="defaultPage" type="Int">
+            <default>0</default>
+        </entry>
+        <entry name="showLabels" type="Bool">
+            <default>true</default>
+        </entry>
+        <entry name="updateCommand" type="String">
+            <default></default>
+        </entry>
+        <entry name="webLinks" type="String">
+            <default></default>
+        </entry>
+        <entry name="animationSpeed" type="Double">
+            <default>1.5</default>
+        </entry>
+        <entry name="portraitMode" type="Bool">
+            <default>true</default>
+        </entry>
+        <entry name="cornerRadius" type="Int">
+            <default>16</default>
+        </entry>
+        <entry name="accentColorMode" type="Int">
+            <default>0</default>
+        </entry>
+        <entry name="customAccentColor" type="String">
+            <default>#fbbf24</default>
+        </entry>
+        <entry name="ribbonStyle" type="Int">
+            <default>0</default>
+        </entry>
+        <entry name="customButtonColor" type="String">
+            <default></default>
+        </entry>
+        <entry name="customSurfaceColor" type="String">
+            <default></default>
+        </entry>
+        <entry name="customRibbonColor" type="String">
+            <default></default>
+        </entry>
+        <entry name="customRibbonBorderColor" type="String">
+            <default></default>
+        </entry>
+        <entry name="customTextColor" type="String">
+            <default></default>
+        </entry>
+        <entry name="customSearchBarColor" type="String">
+            <default></default>
+        </entry>
+        <entry name="customSearchBarBorderColor" type="String">
+            <default></default>
+        </entry>
+        <entry name="customTileHoverColor" type="String">
+            <default></default>
+        </entry>
+        <entry name="enableAnimations" type="Bool">
+            <default>true</default>
+        </entry>
+        <entry name="animationDuration" type="Int">
+            <default>440</default>
+        </entry>
+        <entry name="animationEffect" type="Int">
+            <default>0</default>
+        </entry>
+        <entry name="visualTheme" type="Int">
+            <default>0</default>
+        </entry>
+        <entry name="showHudBar" type="Bool">
+            <default>true</default>
+        </entry>
+    </group>
+</kcfg>
