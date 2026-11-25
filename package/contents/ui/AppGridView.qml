@@ -24,8 +24,27 @@ GridView {
 
     clip: true
     rightMargin: Kirigami.Units.smallSpacing * 1.5
-    cellWidth: Math.floor((width - rightMargin) / Math.max(1, Math.floor((width - rightMargin) / (baseIconSize + Kirigami.Units.gridUnit * 2))))
-    cellHeight: baseIconSize + (showLabels ? Kirigami.Units.gridUnit * 1.8 : Kirigami.Units.gridUnit)
+    cellWidth: {
+        const avail = Math.max(1, width - rightMargin)
+        if (root.isListView) {
+            return avail
+        }
+        if (root.isCompactGrid) {
+            const minW = baseIconSize + Kirigami.Units.smallSpacing * 3
+            return Math.floor(avail / Math.max(1, Math.floor(avail / minW)))
+        }
+        const minW = baseIconSize + Kirigami.Units.gridUnit * 2
+        return Math.floor(avail / Math.max(1, Math.floor(avail / minW)))
+    }
+    cellHeight: {
+        if (root.isListView) {
+            return Math.max(baseIconSize + Kirigami.Units.smallSpacing * 2, Math.round(Kirigami.Units.gridUnit * 2.5))
+        }
+        if (root.isCompactGrid) {
+            return baseIconSize + (showLabels ? Kirigami.Units.gridUnit * 1.5 : Kirigami.Units.smallSpacing * 2)
+        }
+        return baseIconSize + (showLabels ? Kirigami.Units.gridUnit * 1.8 : Kirigami.Units.gridUnit)
+    }
     currentIndex: -1
     keyNavigationWraps: false
 

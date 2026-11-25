@@ -173,6 +173,11 @@ PlasmoidItem {
     readonly property bool isCyber: visualTheme === 2
     readonly property bool isClassic: visualTheme === 3
 
+    // ---- View layout mode: 0 = Grid | 1 = List (icon left) | 2 = Compact Grid ----
+    readonly property int appViewMode: Plasmoid.configuration.appViewMode
+    readonly property bool isListView: appViewMode === 1
+    readonly property bool isCompactGrid: appViewMode === 2
+
     function withAlpha(col, alpha) {
         return Qt.rgba(col.r, col.g, col.b, alpha)
     }

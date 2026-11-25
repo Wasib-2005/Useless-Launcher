@@ -64,6 +64,35 @@ Item {
         id: menu
 
         LauncherMenu {
+            title: i18n("View layout")
+            icon.name: Plasmoid.configuration.appViewMode === 1
+                ? "view-list-details"
+                : (Plasmoid.configuration.appViewMode === 2 ? "view-list-compact" : "view-list-icons")
+
+            LauncherMenuItem {
+                text: i18n("Grid view")
+                icon.name: "view-list-icons"
+                checkable: true
+                checked: Plasmoid.configuration.appViewMode === 0
+                onTriggered: Plasmoid.configuration.appViewMode = 0
+            }
+            LauncherMenuItem {
+                text: i18n("List view (aligned left)")
+                icon.name: "view-list-details"
+                checkable: true
+                checked: Plasmoid.configuration.appViewMode === 1
+                onTriggered: Plasmoid.configuration.appViewMode = 1
+            }
+            LauncherMenuItem {
+                text: i18n("Compact Grid")
+                icon.name: "view-list-compact"
+                checkable: true
+                checked: Plasmoid.configuration.appViewMode === 2
+                onTriggered: Plasmoid.configuration.appViewMode = 2
+            }
+        }
+
+        LauncherMenu {
             title: i18n("Theme style")
             icon.name: "preferences-desktop-theme"
 
@@ -150,6 +179,102 @@ Item {
                 checkable: true
                 checked: Plasmoid.configuration.iconSize >= 80
                 onTriggered: Plasmoid.configuration.iconSize = 80
+            }
+        }
+
+        LauncherMenu {
+            title: i18n("Accent palette")
+            icon.name: "color-management"
+
+            LauncherMenuItem {
+                text: i18n("Adaptive (theme background)")
+                checkable: true
+                checked: Plasmoid.configuration.accentColorMode === 0
+                onTriggered: Plasmoid.configuration.accentColorMode = 0
+            }
+            LauncherMenuItem {
+                text: i18n("Warm Amber")
+                checkable: true
+                checked: Plasmoid.configuration.accentColorMode === 1
+                onTriggered: Plasmoid.configuration.accentColorMode = 1
+            }
+            LauncherMenuItem {
+                text: i18n("Emerald Mint")
+                checkable: true
+                checked: Plasmoid.configuration.accentColorMode === 2
+                onTriggered: Plasmoid.configuration.accentColorMode = 2
+            }
+            LauncherMenuItem {
+                text: i18n("Royal Violet")
+                checkable: true
+                checked: Plasmoid.configuration.accentColorMode === 3
+                onTriggered: Plasmoid.configuration.accentColorMode = 3
+            }
+            LauncherMenuItem {
+                text: i18n("Coral Rose")
+                checkable: true
+                checked: Plasmoid.configuration.accentColorMode === 4
+                onTriggered: Plasmoid.configuration.accentColorMode = 4
+            }
+            LauncherMenuItem {
+                text: i18n("Modern Teal")
+                checkable: true
+                checked: Plasmoid.configuration.accentColorMode === 5
+                onTriggered: Plasmoid.configuration.accentColorMode = 5
+            }
+            LauncherMenuItem {
+                text: i18n("Neutral Slate")
+                checkable: true
+                checked: Plasmoid.configuration.accentColorMode === 6
+                onTriggered: Plasmoid.configuration.accentColorMode = 6
+            }
+            LauncherMenuItem {
+                text: i18n("System highlight")
+                checkable: true
+                checked: Plasmoid.configuration.accentColorMode === 7
+                onTriggered: Plasmoid.configuration.accentColorMode = 7
+            }
+        }
+
+        LauncherMenu {
+            title: i18n("Animation style")
+            icon.name: "speedometer"
+
+            LauncherMenuItem {
+                text: i18n("Smooth glide")
+                checkable: true
+                checked: Plasmoid.configuration.animationEffect === 0
+                onTriggered: Plasmoid.configuration.animationEffect = 0
+            }
+            LauncherMenuItem {
+                text: i18n("Instant (no delay)")
+                checkable: true
+                checked: Plasmoid.configuration.animationEffect === 1
+                onTriggered: Plasmoid.configuration.animationEffect = 1
+            }
+            LauncherMenuItem {
+                text: i18n("Spring scale")
+                checkable: true
+                checked: Plasmoid.configuration.animationEffect === 2
+                onTriggered: Plasmoid.configuration.animationEffect = 2
+            }
+            LauncherMenuItem {
+                text: i18n("Spatial float")
+                checkable: true
+                checked: Plasmoid.configuration.animationEffect === 3
+                onTriggered: Plasmoid.configuration.animationEffect = 3
+            }
+            LauncherMenuItem {
+                text: i18n("Crystalline snap")
+                checkable: true
+                checked: Plasmoid.configuration.animationEffect === 4
+                onTriggered: Plasmoid.configuration.animationEffect = 4
+            }
+            LauncherMenuItem {
+                text: i18n("Bouncy pop")
+                checkable: true
+                checked: Plasmoid.configuration.animationEffect === 5
+                onTriggered: Plasmoid.configuration.animationEffect = 5
             }
         }
 

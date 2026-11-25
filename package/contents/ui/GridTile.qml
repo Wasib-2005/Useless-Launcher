@@ -3,6 +3,7 @@
 
 import QtQuick
 import QtQuick.Controls as QQC2
+import QtQuick.Layouts
 import QtQuick.Shapes
 import org.kde.kirigami as Kirigami
 
@@ -112,8 +113,8 @@ Item {
     // Luminous icon aura when hovered or focused
     Shape {
         visible: !root.isClassic
-        anchors.centerIn: tileContent
-        anchors.verticalCenterOffset: tile.showLabel ? -Kirigami.Units.smallSpacing : 0
+        anchors.centerIn: root.isListView ? tileContentRowIcon : tileContent
+        anchors.verticalCenterOffset: root.isListView ? 0 : (tile.showLabel ? -Kirigami.Units.smallSpacing : 0)
         width: tile.iconSize * 1.65
         height: width
         opacity: tile.activeState ? 1.0 : 0.0
@@ -170,6 +171,7 @@ Item {
 
     Column {
         id: tileContent
+        visible: !root.isListView
         anchors.centerIn: parent
         spacing: Kirigami.Units.smallSpacing / 2
 
@@ -212,6 +214,57 @@ Item {
             elide: Text.ElideRight
             maximumLineCount: 1
             font.pointSize: Kirigami.Theme.smallFont.pointSize
+            Behavior on opacity { NumberAnimation { duration: root.animShort } }
+        }
+    }
+
+    RowLayout {
+        id: tileContentRow
+        visible: root.isListView
+        anchors.fill: parent
+        anchors.leftMargin: Kirigami.Units.smallSpacing * 2
+        anchors.rightMargin: Kirigami.Units.smallSpacing * 2
+        spacing: Kirigami.Units.smallSpacing * 1.5
+
+        Item {
+            id: tileContentRowIcon
+            Layout.preferredWidth: Math.min(tile.iconSize, parent.height - Kirigami.Units.smallSpacing * 1.2)
+            Layout.preferredHeight: Layout.preferredWidth
+            Layout.alignment: Qt.AlignVCenter
+            scale: tileMouse.pressed ? 0.88 : ((tile.activeState && root.animEffect !== 1) ? 1.07 : 1.0)
+            Behavior on scale {
+                NumberAnimation {
+                    duration: root.animFast
+                    easing.type: root.animEasingType
+                    easing.overshoot: root.animOvershoot
+                }
+            }
+
+            Kirigami.Icon {
+                anchors.fill: parent
+                source: tile.icon
+                visible: !tile.imageReady
+            }
+            Image {
+                anchors.fill: parent
+                source: tile.imageSource
+                fillMode: Image.PreserveAspectFit
+                visible: tile.imageReady
+            }
+        }
+
+        QQC2.Label {
+            visible: tile.label.length > 0
+            Layout.fillWidth: true
+            Layout.alignment: Qt.AlignVCenter
+            horizontalAlignment: Text.AlignLeft
+            text: tile.label
+            color: root.effectiveTextColor
+            opacity: tile.activeState ? 1.0 : 0.88
+            font.weight: tile.activeState ? Font.Medium : Font.Normal
+            elide: Text.ElideRight
+            maximumLineCount: 1
+            font.pointSize: Kirigami.Theme.defaultFont.pointSize
             Behavior on opacity { NumberAnimation { duration: root.animShort } }
         }
     }

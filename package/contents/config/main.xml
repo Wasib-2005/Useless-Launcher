@@ -107,5 +107,8 @@
         <entry name="showHudBar" type="Bool">
             <default>true</default>
         </entry>
+        <entry name="appViewMode" type="Int">
+            <default>0</default>
+        </entry>
     </group>
 </kcfg>

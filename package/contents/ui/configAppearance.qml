@@ -31,6 +31,7 @@ KCM.SimpleKCM {
     property alias cfg_rippleGlow: glowCheck.checked
     property var cfg_hiddenApplications: []
     property int cfg_visualTheme
+    property int cfg_appViewMode
     property alias cfg_showHudBar: hudBarCheck.checked
     property int cfg_accentColorMode
     property string cfg_customAccentColor
@@ -121,6 +122,28 @@ KCM.SimpleKCM {
             }
             QQC2.Label {
                 text: i18n("%1%", opacitySlider.value)
+            }
+        }
+
+        QQC2.ComboBox {
+            id: appViewModeCombo
+            Kirigami.FormData.label: i18n("View layout:")
+            Layout.preferredWidth: Kirigami.Units.gridUnit * 15
+            model: [
+                i18n("Grid view (icons centered)"),
+                i18n("List view (icons aligned left)"),
+                i18n("Compact Grid")
+            ]
+            onActivated: configRoot.cfg_appViewMode = currentIndex
+            Component.onCompleted: currentIndex = configRoot.cfg_appViewMode
+        }
+
+        Connections {
+            target: configRoot
+            function onCfg_appViewModeChanged() {
+                if (appViewModeCombo.currentIndex !== configRoot.cfg_appViewMode) {
+                    appViewModeCombo.currentIndex = configRoot.cfg_appViewMode
+                }
             }
         }
 
