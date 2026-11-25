@@ -14,6 +14,17 @@ User-facing installation and usage instructions are in `README.md`.
 - Package ID: `io.github.wasib2005.uselesslauncher`
 - Fork source: [Slick Launcher by Brock](https://codeberg.org/imbrock/slick-launcher)
 - Licence: GPL-2.0-or-later
+- Contributors: Waslla / Wasib, Brock, and Antigravity (Google DeepMind)
+
+## Architecture & Visual System
+
+- **Future Slick Visual Themes**: Configured via `visualTheme` (0 = Spatial Liquid Glass, 1 = Crystalline HUD, 2 = Cyber-Tech Neo-Minimal, 3 = Classic Adaptive).
+- **Future Core Panel Icon**: Panel button mode with responsive orbital arcs (0° idle, 15° hover, 90° open) wired to `root.expanded && !root.closingLauncher`.
+- **Cinematic 3-Phase Animation**:
+  - Phase 1 (0.00-0.40): Shell background expansion + avatar rise.
+  - Phase 2 (0.08-0.68): Top/left ribbons scroll in from behind avatar, search bar rises from bottom.
+  - Phase 3 (0.50-1.00): Content area fade-in.
+- **HUD Telemetry Strip**: Real-time polling via `hudProbe` querying `/proc/stat` and `/proc/meminfo`.
 
 ## Layout
 

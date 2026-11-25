@@ -28,8 +28,11 @@ bottom.
 - Keyboard navigation, type-ahead search, and Meta-key activation.
 - Customisable layouts, colours, themes, animations, icons, labels, and panel
   button styles.
-- Optional status information while open, including time, distribution, CPU,
-  and memory, plus drive capacity in Places.
+- **Future Slick Visual Theme Suite**: Choose between Spatial Liquid Glass (translucent glass depths, specular rim lighting), Crystalline HUD (precision sci-fi accents, angular brackets), Cyber-Tech Neo-Minimal (chamfered edges, hairline micro-grids), or Classic Adaptive.
+- **Future Core Panel Icon**: Panel button mode with reactive dual orbital arcs (0° horizontal when idle, 15° gentle tilt on hover, 90° vertical rotation on menu open).
+- **Cinematic 3-Phase Entrance Animation**: Synchronised choreography featuring avatar rise & backdrop expansion, ribbon and search bar scroll-in, and content fade-in.
+- **HUD Telemetry Strip**: Optional real-time CPU & RAM utilisation badges alongside distribution and user identity badges.
+- Optional status information while open, including distribution, CPU, and memory, plus drive capacity in Places.
 
 ## Requirements
 
@@ -97,3 +100,7 @@ instructions on extracting and translating strings.
 Useless Launcher is based on [Slick Launcher by Brock](https://codeberg.org/imbrock/slick-launcher).
 The original project and its contributors retain their respective copyrights.
 This fork is distributed under the GPL-2.0-or-later licence; see [`LICENSE`](LICENSE).
+
+### Contributors & Enhancements
+- **Waslla / Wasib**: Project maintainer, UX architecture, and Future Slick design direction.
+- **Antigravity (Google DeepMind)**: Implementation of the Future Slick design suite (Spatial Liquid Glass, Crystalline HUD, Cyber-Tech Neo-Minimal), Future Core orbital arc mechanics, 3-phase cinematic entrance choreography, and real-time CPU/RAM HUD telemetry.
