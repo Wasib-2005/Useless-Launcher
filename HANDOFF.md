@@ -67,7 +67,7 @@ journalctl --user -b -g uselesslauncher
    - Go to https://store.kde.org/product/add (or OpenDesktop).
    - Category MUST be: **Plasma 6 Applets** (ensures it appears in Plasma 6's *Get New Widgets*).
    - Under **Files**, upload the generated `.plasmoid` file.
-   - Tag the release on GitHub (e.g. `v0.9.2`) to trigger automatic GitHub Release asset upload.
+   - Tag the release on GitHub (e.g. `v1.0.1`) to trigger automatic GitHub Release asset upload.
 
 ## Known gotchas
 

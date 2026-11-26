@@ -16,7 +16,7 @@
         "Id": "io.github.wasib2005.uselesslauncher",
         "License": "GPL-2.0-or-later",
         "Name": "Useless Launcher",
-        "Version": "0.9.2",
+        "Version": "1.0.1",
         "Website": "https://github.com/Wasib-2005/Useless-Launcher"
     },
     "X-Plasma-API-Minimum-Version": "6.0",

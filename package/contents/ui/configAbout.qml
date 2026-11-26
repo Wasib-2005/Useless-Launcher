@@ -13,7 +13,7 @@ KCM.SimpleKCM {
 
     // Kept in step with metadata.json by hand — bump both on release.
     readonly property string appName: i18n("Useless Launcher")
-    readonly property string appVersion: "0.9.2"
+    readonly property string appVersion: "1.0.1"
     readonly property string appLicense: "GPL-2.0-or-later"
     readonly property string repoUrl: "https://github.com/Wasib-2005/Useless-Launcher"
     readonly property string issuesUrl: "https://github.com/Wasib-2005/Useless-Launcher/issues"

@@ -12,7 +12,7 @@ if [[ ! -f "${METADATA_FILE}" ]]; then
     exit 1
 fi
 
-VERSION=$(grep -oP '"Version":\s*"\K[^"]+' "${METADATA_FILE}" || echo "0.9.2")
+VERSION=$(grep -oP '"Version":\s*"\K[^"]+' "${METADATA_FILE}" || echo "1.0.1")
 ID=$(grep -oP '"Id":\s*"\K[^"]+' "${METADATA_FILE}" || echo "io.github.wasib2005.uselesslauncher")
 OUTPUT_FILE="${REPO_ROOT}/${ID}-${VERSION}.plasmoid"
 
