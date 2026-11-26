@@ -1,0 +1,6 @@
+*.plasmoid
+*.zip
+*.tar.gz
+*.swp
+*~
+.DS_Store

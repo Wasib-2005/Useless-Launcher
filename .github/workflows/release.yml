@@ -1,0 +1,33 @@
+name: Build and Release Plasmoid
+
+on:
+  push:
+    tags:
+      - 'v*'
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Install zip
+        run: sudo apt-get update && sudo apt-get install -y zip
+
+      - name: Build .plasmoid package
+        run: |
+          chmod +x build-plasmoid.sh
+          ./build-plasmoid.sh
+
+      - name: Upload to GitHub Release
+        if: startsWith(github.ref, 'refs/tags/')
+        uses: softprops/action-gh-release@v2
+        with:
+          files: "*.plasmoid"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

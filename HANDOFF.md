@@ -53,18 +53,21 @@ Check QML diagnostics with:
 journalctl --user -b -g uselesslauncher
 ```
 
-## Release
+## Release & KDE Store Packaging
 
 1. Update `Version` in `package/metadata.json`.
-2. From the repository root, create a Plasma package containing the contents
-   of `package/`:
+2. Run the build script to generate the `.plasmoid` package:
 
    ```sh
-   cd package
-   zip -r ../io.github.wasib2005.uselesslauncher-<version>.plasmoid .
+   ./build-plasmoid.sh
    ```
 
-3. Upload the `.plasmoid` to a GitHub Release for this project.
+   This produces `io.github.wasib2005.uselesslauncher-<version>.plasmoid`.
+3. **KDE Store (store.kde.org) Submission**:
+   - Go to https://store.kde.org/product/add (or OpenDesktop).
+   - Category MUST be: **Plasma 6 Applets** (ensures it appears in Plasma 6's *Get New Widgets*).
+   - Under **Files**, upload the generated `.plasmoid` file.
+   - Tag the release on GitHub (e.g. `v0.9.2`) to trigger automatic GitHub Release asset upload.
 
 ## Known gotchas
 
